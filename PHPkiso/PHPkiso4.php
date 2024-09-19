@@ -68,18 +68,22 @@ echo "\n";
 
 echo "文章を入力してください\n";
 echo "回文かどうか判別します\n";
-$kaibun = trim(fgets(STDIN));
+$input = trim(fgets(STDIN));
 
+$length = mb_strlen($input);
 
-echo $kaibun ,"の回文は",strrev($kaibun),"\n";
-
-if($kaibun === strrev($kaibun)){
-    echo "入力された文は回文です";
-}else{
-    echo "入力された文は回文ではありません";
+$reversed = '';
+for ($i = $length - 1; $i >= 0; $i--) {
+    $reversed .= mb_substr($input, $i, 1);
 }
 
+echo "入力されたテキスト: " . $input . "\n";
+echo "回文: " . $reversed . "\n";
 
-
+if($input === $reversed){
+    echo "入力されたテキストは回文です";
+}else{
+    echo "入力されたテキストは回文ではありません";
+}
 
 ?>

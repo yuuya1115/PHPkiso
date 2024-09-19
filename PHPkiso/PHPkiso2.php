@@ -12,7 +12,7 @@ echo "大きい数字を出力します".$A."と".$B;
 echo "\n";
 
 if($A >= $B) {
-    if($A === $B){
+    if($A == $B){
         echo"same int";
     }
     echo $A;
@@ -35,18 +35,18 @@ if($C % 2 == 0){
 echo "\n";
 echo "\n";
 echo "点数を1から100で入力してください\n";
-$D = trim(fgets(STDIN));
-if($D == 100){
+$point = trim(fgets(STDIN));
+if($point == 100){
     echo "AA";
-}else if($D >= 90){
+}else if($point >= 90){
     echo "A";
-}else if($D >= 80){
+}else if($point >= 80){
     echo "B";
-}else if($D >= 70){
+}else if($point >= 70){
     echo "C";
-}else if($D >= 60){
+}else if($point >= 60){
     echo "D";
-}else if($D <= 60){
+}else if($point <= 60){
     echo "E";
 }else{
     echo "数値を入力してください";
@@ -71,9 +71,9 @@ echo "バス賃を判定します\n";
 $F = trim(fgets(STDIN));
 if ($F >= 0 && $F <= 5){
     echo "無料\n";
-}else if($F >= 6 && $F <= 12){
+}else if($F <= 12){
     echo "200円\n";
-}else if($F >= 13 && $F <= 70){
+}else if($F <= 70){
     echo "500円\n";
 }else if($F >= 70){
     echo "無料\n";
